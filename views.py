@@ -1,7 +1,12 @@
-from flask import Blueprint
+from flask import Blueprint ,  render_template , request
 
 views = Blueprint('views', __name__)
 
 @views.route('/')
 def home():
-    return "Hello World!"
+    return render_template('home.html')
+
+@views.route('/shorten' , methods=["POST"])
+def shorten():
+    url =  request.form.get('url').strip()
+    
