@@ -1,5 +1,6 @@
-from flask import Blueprint ,  render_template , request
+from flask import Blueprint ,  render_template , request , redirect
 from models import URL
+from db import db
 import secrets , string
 
 views = Blueprint('views', __name__)
@@ -11,6 +12,8 @@ def home():
 @views.route('/shorten' , methods=["POST"])
 def shorten():
     url =  request.form.get('url').strip()
+    if not url.startswith(('http://' , 'https://')):
+        url = "https://" + url    
     if URL.query.filter_by(long_url=url).first():
         existing_url = URL.query.filter_by(long_url=url).first()
         return f"Short url is http://localhost:5000/{existing_url.short_code}"
@@ -22,7 +25,15 @@ def shorten():
 
     new_url = URL(long_url=url, short_code=code)
     db.session.add(new_url)
-    db.commit()
+    db.session.commit()
 
     return f"Short url is http://localhost:5000/{code}"
-    
+
+@views.route('/<code>')
+def redirect_to_original_url(code):
+    url = URL.query.filter_by(short_code=code).first()
+    if url:
+        return redirect(url.long_url)
+    else:
+        return "Invalid code", 404
+
