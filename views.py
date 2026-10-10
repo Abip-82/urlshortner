@@ -17,4 +17,12 @@ def shorten():
     
     digits = string.digits + string.ascii_letters
     code = ''.join(secrets.choice(digits) for i in range(7))
-    return code
+    while URL.query.filter_by(short_code=code).first():
+        code  = ''.join(secrets.choice(digits) for i in range(7))
+
+    new_url = URL(long_url=url, short_code=code)
+    db.session.add(new_url)
+    db.commit()
+
+    return f"Short url is http://localhost:5000/{code}"
+    
