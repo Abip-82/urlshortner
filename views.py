@@ -16,7 +16,7 @@ def shorten():
         url = "https://" + url    
     if URL.query.filter_by(long_url=url).first():
         existing_url = URL.query.filter_by(long_url=url).first()
-        return f"Short url is http://localhost:5000/{existing_url.short_code}"
+        return f"Short url is https://urlshortner-xi-roan.vercel.app/{existing_url.short_code}"
     
     digits = string.digits + string.ascii_letters
     code = ''.join(secrets.choice(digits) for i in range(7))
@@ -27,7 +27,7 @@ def shorten():
     db.session.add(new_url)
     db.session.commit()
 
-    return f"Short url is http://localhost:5000/{code}"
+    return f"Short url is https://urlshortner-xi-roan.vercel.app/{code}"
 
 @views.route('/<code>')
 def redirect_to_original_url(code):
