@@ -12,7 +12,7 @@
 </head>
 <body>
     <main>
-        <section class="hero"></section>
+        <section class="hero">
         <div class="eyebrow">
             <span class="status-dot"></span>
             Simple, Fast, and Reliable URL Shortener
@@ -24,17 +24,18 @@
                 <h2>Shorten your link</h2>
                 <p>Paste your long link below.</p>
             </div>
-        </div>
-        <form action="/shorten" method="POST" class="url-form">
-            <label for="url">Your destination Url</label>
-            <div class="input-wrapper">
-                <input type="text" name="url" placeholder="Enter your URL here..." required>
+            <form action="/shorten" method="POST" class="url-form">
+                <label for="url">Your destination Url</label>
+                <div class="input-wrapper">
+                    <input type="text" name="url" placeholder="Enter your URL here..." required>
+                </div>
+                <button type="submit" class="shorten-button">Shorten</button>
+            </form>
+            <div class="card-footer">
+                Easy. Fast. Reliable.
             </div>
-            <button type="submit" class="shorten-button">Shorten</button>
-        </form>
-        <div class="card-footer">
-            Easy. Fast. Reliable.
         </div>
+        </section>
     </main>
     <footer>
         <p>Built with Flask.</p>
