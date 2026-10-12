@@ -1,0 +1,134 @@
+:root{
+    --primary-color:#7057e8;
+    --primary-dakr: #5940cf;
+    --background:#f7f8fc;
+    --text:#19172b;
+    --muted:#77788d;
+    --border:#e8e8f1;
+    --white:#ffffff;
+*{
+    margin: 0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+body{
+    font-family:"Inter",sans-serif;
+    background:
+        radial-gradient(
+            ellipse at 50% 0%,
+            rgba(112,87,232,0.09),
+            transparent 48%
+        ),
+        var(--background);
+    color: var(--text);
+    min-height:100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration : none;
+    color:inherit;
+}
+
+main {
+    flex : 1;
+}
+
+.hero{
+    width:min(760px , calc(100% - 36ox));
+    margin: 75px auto 80px;
+    text-align:center;
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items:center;
+    gap : 9px;
+    padding : 9px 14px ;
+    border : 1px solid #e7e1ff;
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 30px;
+    color: #6650d4;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.hero h1 {
+   margin-top: 27px;
+    font-size: clamp(42px, 7vw, 68px);
+    line-height: 1.1;
+    letter-spacing: -4px;
+    font-weight: 800;
+}
+
+.hero-description {
+    max-width: 480px;
+    margin : 20px auto 0;
+    color :  var(--muted);
+    font-size:15px;
+    line-height:1.9;
+}
+
+.url-form label {
+    display:block;
+    margin-bottom:10px;
+    font-size:12px;
+    font-weight:700;
+    color:#393f5c;
+}
+
+.input-wrapper { 
+    display :flex;
+    align-items: center;
+    gap :12px;
+    padding: 0 15px;
+    border: 1px solid #e5e4ef;
+    border-radius: 11px;
+    background: #f7f8fc;
+}
+
+.input-wrapper:focus-within {
+    border-color : var(--primary);
+    box-shadow: 0 0 0 4px rbga(112, 87, 232, 0.1);
+}
+
+.input-wrapper input {
+    width: 100%;
+    min-width: 0;
+    height: 54px;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--text);
+    font: inherit;
+    font-size: 13px;
+}
+
+.shorten-button {
+    width: 100%;
+    min-height:53px;
+    margin-top:15px;
+    padding: 0 20px;
+    display : flex;
+    justify-content : center;
+    align-items: center;
+    gap:12px;
+    border:none;
+    border-radius: 11px;
+    background:var(--primary);
+    color:white;
+    font-family:inherit;
+    font-size: 13px;
+    font-weight:700;
+    cursor:pointer
+}
+
+.footer p {
+    text-align : center;
+}
