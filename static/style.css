@@ -6,6 +6,7 @@
     --muted:#77788d;
     --border:#e8e8f1;
     --white:#ffffff;
+}
 *{
     margin: 0;
     padding:0;
@@ -154,8 +155,8 @@ main {
         padding : 20px 0;
     }
     .footer p { 
-        flex-basis : 100%
-        order:1;
+        flex-basis : 100%;
+
     }
 
 }
