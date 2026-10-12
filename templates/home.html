@@ -13,31 +13,30 @@
 <body>
     <main>
         <section class="hero">
-        <div class="eyebrow">
-            <span class="status-dot"></span>
-            Simple, Fast, and Reliable URL Shortener
-        </div>
-        <h1> Long Road?<br><span>Short Routes</span></h1>
-        <p class="hero-description">Make your links shorter, cleaner and easier to share.</p>
-        <div class="shortner-card" id="shorten">
-            <div class="card-heading">
-                <h2>Shorten your link</h2>
-                <p>Paste your long link below.</p>
+            <div class="eyebrow">
+                <span class="status-dot"></span>
+                Simple, Fast, and Reliable URL Shortener
             </div>
-            <form action="/shorten" method="POST" class="url-form">
-                <label for="url">Your destination Url</label>
-                <div class="input-wrapper">
-                    <input type="text" name="url" placeholder="Enter your URL here..." required>
+            <h1> Long Road?<br><span>Short Routes</span></h1>
+            <p class="hero-description">Make your links shorter, cleaner and easier to share.</p>
+            <div class="shortener-card" id="shorten">
+                <div class="card-heading">
+                    <h2>Shorten your link</h2>
                 </div>
-                <button type="submit" class="shorten-button">Shorten</button>
-            </form>
-            <div class="card-footer">
-                Easy. Fast. Reliable.
+                <form action="/shorten" method="POST" class="url-form">
+                    <label for="url">Your destination Url</label>
+                    <div class="input-wrapper">
+                        <input type="text" name="url" placeholder="Enter your URL here..." required>
+                    </div>
+                    <button type="submit" class="shorten-button">Shorten</button>
+                </form>
+                <div class="card-footer">
+                    Easy. Fast. Reliable.
+                </div>
             </div>
-        </div>
         </section>
     </main>
-    <footer>
+    <footer class="footer">
         <p>Built with Flask.</p>
         <p>Shorten links with one click.</p>
     </footer>

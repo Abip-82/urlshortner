@@ -1,4 +1,4 @@
-from flask import Blueprint ,  render_template , request , redirect
+from flask import Blueprint ,  render_template , request , redirect 
 from models import URL
 from db import db
 import secrets , string
@@ -35,5 +35,5 @@ def redirect_to_original_url(code):
     if url:
         return redirect(url.long_url)
     else:
-        return "Invalid code", 404
+        return render_template("error404.html") ,404
 
