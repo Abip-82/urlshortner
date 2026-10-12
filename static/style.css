@@ -132,3 +132,30 @@ main {
 .footer p {
     text-align : center;
 }
+
+@media (max-width: 600px) {
+    .hero {
+        margin-top:54px;
+        margin-bottom:55px;
+    }
+    .hero h1 {
+        letter-spacing: -2.5px;
+    }
+    .hero-description { 
+        font-size: 13px;
+    }
+    .input-wrapper input { 
+        font-size: 15px;
+    }
+    .footer { 
+        width : calc(100% - 36px);
+        flex-wrap: wrap;
+        justify-content : center;
+        padding : 20px 0;
+    }
+    .footer p { 
+        flex-basis : 100%
+        order:1;
+    }
+
+}
